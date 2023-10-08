@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](https://github.com/olivierlacan/keep-a
 
 ### Added
 
+- feature (https://github.com/tsengyushiang/ci-test/pull/2)
 ### Changed
 
 ### Fixed
