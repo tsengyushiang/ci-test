@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+
+env:
+  GITHUB_PR_NUMBER: ${{github.event.pull_request.number}}
+  GITHUB_REPO: ${{github.repository}}
+
+jobs:
+  build:
+    name: changelog
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Search PR link
+        run: |
+          echo "${GITHUB_REPO}"
+          echo "$GITHUB_PR_NUMBER"
+          grep -rni "/$GITHUB_PR_NUMBER" ./CHANGELOG.md || exit 1
