@@ -18,6 +18,4 @@ jobs:
       - uses: actions/checkout@v1
       - name: Search PR link
         run: |
-          echo "${GITHUB_REPO}"
-          echo "$GITHUB_PR_NUMBER"
-          grep -rni "/$GITHUB_PR_NUMBER" ./CHANGELOG.md || exit 1
+          grep -rni "${GITHUB_REPO}/pull/$GITHUB_PR_NUMBER" ./CHANGELOG.md || exit 1
