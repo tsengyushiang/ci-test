@@ -12,6 +12,15 @@ env:
 
 jobs:
   build:
+    name: log var
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Search PR link
+        run: |
+          echo "${GITHUB_REPO}"
+          echo "${GITHUB_PR_NUMBER}"
+  build:
     name: changelog
     runs-on: ubuntu-latest
     steps:
