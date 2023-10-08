@@ -11,7 +11,7 @@ env:
   GITHUB_REPO: ${{github.repository}}
 
 jobs:
-  build:
+  log:
     name: log var
     runs-on: ubuntu-latest
     steps:
@@ -20,7 +20,7 @@ jobs:
         run: |
           echo "${GITHUB_REPO}"
           echo "${GITHUB_PR_NUMBER}"
-  build:
+  test:
     name: changelog
     runs-on: ubuntu-latest
     steps:
